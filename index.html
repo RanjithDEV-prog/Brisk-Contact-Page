@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Brisk - Premium Tech & Electronics Store</title>
+</head>
+<body>
+
+    <!-- Top Tag Line  -->
+
+    <div class="toptagline">
+        <div class="left">
+            <div class="delivery">
+                <p style="border-right: 2px solid #97a6c0; padding-right: 1rem;">Free Delivery Across UAE Above AED 200</p>
+            </div>
+            <div class="quality">
+                <p style="border-right: 2px solid #97a6c0; padding:0 1rem 0 1rem;">Quality Assured</p>
+            </div>
+            <div class="checking">
+                <p style="padding-left: 1rem;">Sourced & Checked By Experts</p>
+            </div>
+        </div>
+
+        <div class="right">
+            <select id="countrySelect" onchange="handleCountryChange(this.value)">
+                <option value="">Select country</option>
+                <option value="AE" selected>United Arab Emirates (AED)</option>
+                <option value="IN">India (INR ₹)</option>
+                <option value="US">United States (USD $)</option>
+                <option value="UK">United Kingdom (GBP £)</option>
+                <option value="CA">Canada (CAD $)</option>
+                <option value="AU">Australia (AUD $)</option>
+                <option value="DE">Germany (EUR €)</option>
+                <option value="FR">France (EUR €)</option>
+                <option value="JP">Japan (JPY ¥)</option>
+                <option value="SG">Singapore (SGD $)</option>
+            </select>
+        </div>
+    </div>
+
+    <!--   container-one  -->
+
+    <div class="container-one">
+        <div class="logo">
+            <img src="img/brisk-industries-pvt-ltd--v2.jpg" id="logoBtn" alt="Brisk Logo" class="clickable">
+        </div>
+        <div class="search-bar">
+            <span>
+                <input type="search" id="searchInput" placeholder="Search for products..." onkeyup="handleSearchKeyup(event)">
+                <button onclick="searchBTN()"><i class="bi bi-search"></i>Search</button>
+            </span>
+        </div>
+        <div class="nav-icon">
+            <a href="#" id="ticketNavBtn" title="Track Order / Support Tickets"><i class="bi bi-ticket-perforated"></i></a>
+            <a href="#" id="accountNavBtn" title="User Account / Login"><i class="bi bi-person"></i></a>
+            <a href="#" id="wishlistNavBtn" class="badge-icon" title="Wishlist"><i class="bi bi-heart"></i><span class="badge" id="wishlistBadge">0</span></a>
+            <a href="#" id="cartNavBtn" class="badge-icon" title="Shopping Cart"><i class="bi bi-cart3"></i><span class="badge" id="cartBadge">0</span></a>
+        </div>
+    </div>
+
+    <!--   container-two  -->
+
+    <div class="container-two">
+        <div class="category">
+            <select name="category" id="categorySelect" onchange="handleCategoryDropdown(this.value)">
+                <option value="All Catogories">All Catogories</option>
+                <option value="Laptop & Computers">Laptop & Computers</option>
+                <option value="Mac Book">Mac Book</option>
+                <option value="Chrome Book">Chrome Book</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Tablet & Ipad">Tablet & Ipad</option>
+                <option value="Brisk Super Sale">Brisk Super Sale</option>
+            </select>
+        </div>
+        <div class="scroll-bar" id="scrollBar">
+            <a href="#" data-page="contact" class="active-link" onclick="switchView('contact'); return false;">Contact Us</a>
+            <a href="#" data-category="Laptop & Computers" onclick="filterCategoryNav('Laptop & Computers'); return false;">Laptop & Computers</a>
+            <a href="#" data-category="Mac Book" onclick="filterCategoryNav('Mac Book'); return false;">Mac Book</a>
+            <a href="#" data-category="Chrome Book" onclick="filterCategoryNav('Chrome Book'); return false;">Chrome Book</a>
+            <a href="#" data-category="Accessories" onclick="filterCategoryNav('Accessories'); return false;">Accessories</a>
+            <a href="#" data-category="Mobile" onclick="filterCategoryNav('Mobile'); return false;">Mobile</a>
+            <a href="#" data-category="Tablet & Ipad" onclick="filterCategoryNav('Tablet & Ipad'); return false;">Tablet & Ipad</a>
+            <a href="#" data-category="Brisk Super Sale" onclick="filterCategoryNav('Brisk Super Sale'); return false;">Brisk Super Sale</a>
+        </div>
+    </div>
+
+
+    <div class="heading" id="pageHeading">Contact Us</div>
+
+    <!-- MAIN DYNAMIC VIEWS WRAPPER -->
+
+    <!-- 1. CONTACT US VIEW (Original Design Completely Preserved) -->
+    <div id="contactView" class="view-container active-view">
+        <div class="container-three">
+            <div class="left">
+                <p class="head">Send us a message</p>
+                <p class="para">Do you have a question? A complain? Or need any help to choose the<br> right product from Brisk. Feel free to cantact us</p>
+                <form id="contactForm">
+                    <div class="name-input">
+                        <div class="fristname">
+                            <label>Frist Name</label>
+                            <input type="text" class="inputrequire" placeholder="Enter your frist name">
+                        </div>
+                        <div class="lastname">
+                            <label>Last Name</label>
+                            <input type="text" class="inputrequire" placeholder="Enter your last name">
+                        </div>
+                    </div>
+                    <div class="email-contact-input">
+                        <div class="email">
+                            <label>Email</label>
+                            <input type="text" class="inputrequire" placeholder="Enter your email">
+                        </div>
+                        <div class="contact">
+                            <label>Contact Details</label>
+                            <input type="tel" class="inputrequire" placeholder="Enter your contact number">
+                        </div>
+                    </div>
+                    <div class="message-input">
+                        <div class="message">
+                            <label>Message</label>
+                            <input type="text" class="inputrequire" placeholder="Enter your message">
+                        </div>
+                    </div>    
+                    <div class="sendbtn">
+                        <button type="submit">Send a Message</button>
+                    </div>
+                </form>
+                <p id="successMessage"></p>
+            </div>
+
+            <div class="right">
+                <p class="head">Hi! We are always here <br> to help you.</p>
+            
+                <div class="hotline clickable" onclick="copySupportInfo('+91 6380887818', 'Phone Number')">
+                    <div class="icon">
+                        <i class="bi bi-headset"></i>
+                    </div>
+                    <div class="content">
+                        <p>Hotline:</p><p>+91 6380887818</p>
+                    </div>
+                </div> 
+                <div class="sms clickable" onclick="copySupportInfo('+91 6380887818', 'WhatsApp Number')">
+                    <div class="icon">
+                            <i class="bi bi-chat-dots"></i>
+                    </div>
+                    <div class="content">
+                        <p>SMS/Whatsapp</p><p>+91 6380887818</p>
+                    </div>
+                </div> 
+                <div class="email clickable" onclick="copySupportInfo('support@brisk.com', 'Support Email')">
+                    <div class="icon">
+                            <i class="bi bi-envelope-at"></i>
+                    </div>
+                    <div class="content">
+                        <p>Email</p><p>support@brisk.com</p>
+                    </div>
+                </div> 
+                
+                <div class="connecticon">
+                    <p class="connect">Connect with us</p>
+                    <div class="icon">
+                        <a href="https://www.facebook.com/share/1DnkVd3oUe/" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/ranjith_s.s?igsi=MXcwdzF0ZnJtdmFydA==" target="_blank"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/ranjith-selvakumar3" target="_blank"><i class="bi bi-snapchat"></i></a>
+                        <a href="https://www.linkedin.com/in/ranjith-selvakumar3" target="_blank"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://x.com/zaricautomotive" target="_blank"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. SHOP / PRODUCT CATALOG VIEW -->
+    <div id="shopView" class="view-container">
+        <div class="shop-wrapper">
+            <div class="shop-controls">
+                <div class="filter-pills" id="categoryPills">
+                    <button class="filter-pill active" onclick="filterCategoryPill('All Catogories', this)">All Products</button>
+                    <button class="filter-pill" onclick="filterCategoryPill('Laptop & Computers', this)">Laptops</button>
+                    <button class="filter-pill" onclick="filterCategoryPill('Mac Book', this)">MacBooks</button>
+                    <button class="filter-pill" onclick="filterCategoryPill('Chrome Book', this)">Chromebooks</button>
+                    <button class="filter-pill" onclick="filterCategoryPill('Mobile', this)">Mobiles</button>
+                    <button class="filter-pill" onclick="filterCategoryPill('Tablet & Ipad', this)">Tablets</button>
+                    <button class="filter-pill" onclick="filterCategoryPill('Accessories', this)">Accessories</button>
+                    <button class="filter-pill" onclick="filterCategoryPill('Brisk Super Sale', this)">Super Sale</button>
+                    <button class="filter-pill" onclick="filterCategoryPill('Renewed', this)">Renewed Deals</button>
+                </div>
+                <div class="sort-select-wrapper">
+                    <select id="sortSelect" onchange="renderProducts()">
+                        <option value="featured">Featured First</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="product-grid" id="productGrid">
+                <!-- Dynamically Populated by script.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. ABOUT US VIEW -->
+    <div id="aboutView" class="view-container">
+        <div class="about-wrapper">
+            <div class="about-hero">
+                <h2>Empowering Next-Gen Technology Solutions</h2>
+                <p>Brisk Industries Pvt Ltd is UAE's premier provider of top-tier consumer electronics, certified renewed devices, high-performance computing systems, and essential mobile accessories.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="bi bi-shop"></i>
+                    <h3>15+</h3>
+                    <p>Experience Stores in UAE</p>
+                </div>
+                <div class="stat-card">
+                    <i class="bi bi-box-seam"></i>
+                    <h3>50k+</h3>
+                    <p>Verified Orders Shipped</p>
+                </div>
+                <div class="stat-card">
+                    <i class="bi bi-star-fill"></i>
+                    <h3>4.9/5</h3>
+                    <p>Customer Satisfaction Rating</p>
+                </div>
+                <div class="stat-card">
+                    <i class="bi bi-shield-check"></i>
+                    <h3>100%</h3>
+                    <p>Expert Tested & Quality Assured</p>
+                </div>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h4>Direct Manufacturer Sourcing</h4>
+                    <p>We work directly with leading technology brands like Apple, Dell, HP, Lenovo, and Samsung to bring you genuine products at competitive prices.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Rigorous 50-Point Inspection</h4>
+                    <p>Every renewed item in our catalog undergoes rigorous functional testing by certified hardware engineers prior to delivery.</p>
+                </div>
+                <div class="value-card">
+                    <h4>Lightning Express Delivery</h4>
+                    <p>Enjoy free express delivery across UAE on orders exceeding AED 200, backed by real-time order tracking support.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. FAQ VIEW -->
+    <div id="faqView" class="view-container">
+        <div class="faq-wrapper">
+            <div class="faq-search">
+                <i class="bi bi-search"></i>
+                <input type="text" id="faqSearchInput" placeholder="Search frequently asked questions..." onkeyup="filterFAQ(this.value)">
+            </div>
+            <div id="faqAccordion">
+                <div class="accordion-item active">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>How long does delivery take across the UAE?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        Standard express delivery takes 1 to 2 business days across Dubai, Abu Dhabi, Sharjah, and major UAE cities. Same-day delivery is available for orders placed before 12:00 PM in Dubai.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What is Brisk's return and refund policy?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        We offer a 14-day hassle-free return and full refund policy for unused items in original packaging. Renewed electronics come with a standard 12-month Brisk Warranty.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What does "Renewed" condition mean at Brisk?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        Brisk Renewed products are pre-owned or open-box devices that have been professionally inspected, cleaned, tested, and restored to full original working condition.
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>What payment options are accepted?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        We accept Visa, MasterCard, Apple Pay, Cash on Delivery (COD), and 0% interest monthly installment plans (Tabby / Tamara).
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <span>How can I track my existing order status?</span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <div class="accordion-body">
+                        Click on the ticket icon in the top header or visit our Track Order popup, enter your Order ID and Email to see live courier tracking updates.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- container four  -->
+
+    <div class="container-four">
+      <div class="box-1"> 
+        
+         
+        <div class="left">
+            <img src="img/brisk-industries-pvt-ltd--v2.jpg" alt="Brisk Logo">
+        </div>
+        <div class="right">
+            <div class="head">
+                <p>Subscribe to Newsletter</p>
+            </div>
+            <div class="input-btn">
+                <input type="text" id="newsemailinput" placeholder="enter your email ID">
+                <button onclick="subscribeBTN()">Subscribe<i class="bi bi-arrow-right-short"></i></button>
+            </div>
+
+            <span id="emailError"></span>
+            <p id="EmailsuccessMessage"></p>
+        </div>
+      
+      </div>
+        <hr>
+      <div class="box-2">
+        <div class="column-1">
+            <label>Shop By</label>
+            <a href="#" onclick="filterCategoryNav('Laptop & Computers'); return false;">Laptops & Computers</a>
+            <a href="#" onclick="filterCategoryNav('Chrome Book'); return false;">Chrome books</a>
+            <a href="#" onclick="filterCategoryNav('Desktops & All in one'); return false;">Desktops & All in one</a>
+            <a href="#" onclick="filterCategoryNav('Mobile'); return false;">Mobile & Tablets</a>
+            <a href="#" onclick="filterCategoryNav('Accessories'); return false;">Accessories</a>
+            <a href="#" onclick="filterCategoryNav('Mac Book'); return false;">Apple Product</a>
+        </div>
+        <div class="column-2">
+            <label>Renewed</label>
+            <a href="#" onclick="filterCategoryNav('Renewed'); return false;">Renewed Laptops</a>
+            <a href="#" onclick="filterCategoryNav('Renewed'); return false;">Renewed Mobiles</a>
+            <a href="#" onclick="filterCategoryNav('Renewed'); return false;">Renewed Tablets</a>
+            <a href="#" onclick="filterCategoryNav('Renewed'); return false;">Renewed Chrome book's</a>
+            <a href="#" onclick="filterCategoryNav('Renewed'); return false;">Renewed Apple Product</a>
+        </div>
+        <div class="column-3">
+            <label>Information</label>
+            <a href="#" onclick="openPolicyModal('cancellation'); return false;">Cancellation Policy</a>
+            <a href="#" onclick="openPolicyModal('delivery'); return false;">Delivery Policy</a>
+            <a href="#" onclick="openPolicyModal('emi'); return false;">EMI & Payment</a>
+            <a href="#" onclick="openPolicyModal('privacy'); return false;">Privacy Policy</a>
+            <a href="#" onclick="openPolicyModal('refund'); return false;">Return & Refund</a>
+            <a href="#" onclick="openPolicyModal('warranty'); return false;">Warranty Policy</a>
+        </div>
+        <div class="column-4">
+            <label>Brisk</label>
+            <a href="#" onclick="switchView('about'); return false;">About Us</a>
+            <a href="#" onclick="switchView('contact'); return false;">Contact Us</a>
+            <a href="#" onclick="switchView('faq'); return false;">FAQ</a>
+            <a href="#" onclick="openPolicyModal('terms'); return false;">Terms & Conditions</a>
+            <a href="#" onclick="openLoyaltyModal(); return false;">Loyalty Program</a>
+        </div>
+        <div class="column-5">
+            <label>Download our Apps</label>
+                <a href="#" onclick="showToast('Brisk iOS App coming soon on App Store!'); return false;" class="apple-link">
+                    <i class="bi bi-apple"></i>
+                    <div class="text-link">
+                        <p class="head">Available on the</p>
+                        <p class="subhead">App Store</p>
+                    </div>
+                </a>    
+            <br>
+                <a href="#" onclick="showToast('Brisk Android App coming soon on Google Play!'); return false;" class="play-link">
+                    <i class="bi bi-google-play"></i>
+                    <div class="text-link">
+                        <p class="head">GET IT ON</p>
+                        <p class="subhead">Google Play</p>
+                    </div>
+                </a>    
+        </div>
+      </div>
+
+      <div class="box-3">
+        <div class="content-1">
+            <div class="column-1">
+                <p class="head">We're always here to help you...</p>
+                <p class="subhead">Reach out to us throgh any of these support channels</p>
+            </div>
+        
+        <div class="column-2">
+            <p class="head">Hotline:</p>
+            <p class="subhead clickable" onclick="copySupportInfo('+91 6380887818', 'Phone Number')">+91 6380887818</p>
+        </div>
+        <div class="column-3">
+            <p class="head">Email</p>
+            <p class="subhead clickable" onclick="copySupportInfo('support@brisk.com', 'Support Email')">support@brisk.com</p>
+        </div>
+        <div class="column-4">
+            <p class="head">Connect with us</p>
+                <div class="icon">
+                    <a href="https://www.facebook.com/share/1DnkVd3oUe/" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/ranjith_s.s?igsi=MXcwdzF0ZnJtdmFydA==" target="_blank"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/ranjith-selvakumar3" target="_blank"><i class="bi bi-snapchat"></i></a>
+                    <a href="https://www.linkedin.com/in/ranjith-selvakumar3" target="_blank"><i class="bi bi-tiktok"></i></a>
+                    <a href="https://x.com/zaricautomotive" target="_blank"><i class="bi bi-twitter"></i></a>
+                </div>
+                
+        </div>
+        </div>
+      </div><hr>
+
+      <div class="content-end">
+        <p>@2026 brisk All rights reserved | Powered by Ranjith-Prog</p>
+      </div>
+    </div>
+
+
+    <!-- DRAWERS & MODALS BACKDROPS -->
+
+    <div class="drawer-backdrop" id="drawerBackdrop" onclick="closeAllDrawers()"></div>
+
+    <!-- CART SIDE DRAWER -->
+    <div class="drawer" id="cartDrawer">
+        <div class="drawer-header">
+            <h3><i class="bi bi-cart3"></i> Your Shopping Cart</h3>
+            <button class="drawer-close" onclick="closeAllDrawers()">&times;</button>
+        </div>
+        <div class="drawer-body" id="cartDrawerBody">
+            <!-- Dynamically Rendered -->
+        </div>
+        <div class="drawer-footer">
+            <div class="drawer-total">
+                <span>Total Amount:</span>
+                <span id="cartTotalAmount">AED 0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="processCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- WISHLIST SIDE DRAWER -->
+    <div class="drawer" id="wishlistDrawer">
+        <div class="drawer-header">
+            <h3><i class="bi bi-heart"></i> Saved Wishlist</h3>
+            <button class="drawer-close" onclick="closeAllDrawers()">&times;</button>
+        </div>
+        <div class="drawer-body" id="wishlistDrawerBody">
+            <!-- Dynamically Rendered -->
+        </div>
+    </div>
+
+    <!-- USER ACCOUNT MODAL -->
+    <div class="modal-overlay" id="accountModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3><i class="bi bi-person-circle"></i> Customer Account Portal</h3>
+                <button class="modal-close" onclick="closeModal('accountModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form" onsubmit="handleAccountLogin(event)">
+                    <div>
+                        <label>Email Address</label>
+                        <input type="email" placeholder="name@example.com" required>
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input type="password" placeholder="••••••••" required>
+                    </div>
+                    <button type="submit" class="modal-btn">Sign In to Brisk</button>
+                    <p style="font-size: 0.8rem; text-align: center; color: #64748b; margin-top: 0.5rem;">New to Brisk? Registration is automatically created upon checkout.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRACK ORDER MODAL -->
+    <div class="modal-overlay" id="trackModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3><i class="bi bi-truck"></i> Live Order Tracking</h3>
+                <button class="modal-close" onclick="closeModal('trackModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="modal-form" onsubmit="handleTrackOrder(event)">
+                    <div>
+                        <label>Order Reference ID</label>
+                        <input type="text" id="trackOrderId" placeholder="e.g. BRK-88492" required>
+                    </div>
+                    <div>
+                        <label>Phone Number or Email</label>
+                        <input type="text" placeholder="Enter contact info" required>
+                    </div>
+                    <button type="submit" class="modal-btn">Track Delivery Status</button>
+                </form>
+                <div id="trackResultBox" style="margin-top: 1rem; display: none; background: #f8fafc; padding: 1rem; border-radius: 0.5rem; border: 1px solid #cbd5e1;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POLICY READER MODAL -->
+    <div class="modal-overlay" id="policyModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="policyModalTitle">Information Policy</h3>
+                <button class="modal-close" onclick="closeModal('policyModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="policy-content-box" id="policyModalBody">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUICK VIEW MODAL -->
+    <div class="modal-overlay" id="quickViewModal">
+        <div class="modal-card" style="max-width: 650px;">
+            <div class="modal-header">
+                <h3 id="quickViewTitle">Product Quick View</h3>
+                <button class="modal-close" onclick="closeModal('quickViewModal')">&times;</button>
+            </div>
+            <div class="modal-body" id="quickViewBody">
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
